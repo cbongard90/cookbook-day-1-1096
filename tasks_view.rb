@@ -11,6 +11,7 @@ class TasksView
     end
   end
 
+  # Request user input
   def ask_user_for_index
     puts "Please select the index:"
     return gets.chomp.to_i
