@@ -7,13 +7,14 @@ class TasksView
   # Display all the tasks in the array
   def display(tasks)
     tasks.each_with_index do |task, index|
-      puts "#{index} - #{task.description}"
+      done = task.done? ? "[x]" : "[ ]"
+      puts "#{done} #{index + 1} - #{task.description}"
     end
   end
 
   # Request user input
   def ask_user_for_index
     puts "Please select the index:"
-    return gets.chomp.to_i
+    return gets.chomp.to_i - 1
   end
 end
